@@ -9,6 +9,10 @@ import en from "./assets/translations/en.json";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LayoutPage from "./pages/LayoutPage";
 import HomeScreen from "./components/home/homeScreen";
+import AuthPage from "./pages/AuthPage";
+import LocalStorage from "./components/shared/localStorage";
+import Utils from "./utils/Utils";
+LocalStorage.initApp();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,10 +23,11 @@ const router = createBrowserRouter([
       { path: "/contactUs", element: <p>wd</p> },
     ],
   },
+  { path: "/login", element: <AuthPage /> },
 ]);
 i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },
-  lng: "en",
+  lng: Utils.lang,
   resources: {
     en: {
       translation: en,

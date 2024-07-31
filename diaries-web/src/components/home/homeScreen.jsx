@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import MainAppIcon from "../shared/mainAppIcon";
+import { Link } from "react-router-dom";
 
 export default function HomeScreen() {
   const { t } = useTranslation();
@@ -11,9 +12,12 @@ export default function HomeScreen() {
           <MainAppIcon />
         </div>
       </div>
-      <button className="  hover:bg-zinc-800 duration-75 delay-50 hover:text-white  sm:text-xl m-4 self-center w-1/2 text-xl p-4 rounded-3xl border-2 border-zinc-800">
-        {t("joinUs")}
-      </button>
+      <Link
+        to={"/login"}
+        className="  hover:bg-zinc-800 duration-75 delay-50 hover:text-white flex sm:text-xl m-4 self-center w-1/2 text-xl p-4 rounded-3xl border-2 border-zinc-800 justify-center"
+      >
+        <label>{t("joinUs")}</label>
+      </Link>
     </main>
   );
 }

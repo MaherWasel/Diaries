@@ -1,13 +1,16 @@
 // src/components/LanguageIcon.js
 
 import { useTranslation } from "react-i18next";
+import LocalStorage from "./localStorage";
+import Utils from "../../utils/Utils";
 
 export default function LanguageIcon() {
   const { i18n } = useTranslation();
   const { t } = useTranslation();
   const toggleLanguage = () => {
     const newLanguage = i18n.language === "en" ? "ar" : "en";
-    i18n.changeLanguage(newLanguage);
+    LocalStorage.storeLanguage(newLanguage);
+    i18n.changeLanguage(Utils.lang);
   };
 
   return (
@@ -18,4 +21,4 @@ export default function LanguageIcon() {
       {i18n.language === "ar" ? t("en") : t("ar")}
     </button>
   );
-}wddw
+}

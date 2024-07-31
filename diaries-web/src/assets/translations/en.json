@@ -7,5 +7,16 @@
   "login": "Login",
   "register": "Register",
   "joinUs": "Join Us",
-  "appInfo": "🌟 Introducing the Ultimate Diary App! 🌟\n\nUnlock the power of your thoughts and memories with our all-new diary app. Whether you want to jot down daily experiences, reflect on your dreams, or capture your creative ideas, our app is designed to make journaling easy and enjoyable.\n\n📖 Features:\n- Easy-to-Use Interface: Effortlessly write, edit, and organize your diary entries.\n- Customizable Themes: Choose from a variety of themes to match your mood.\n- Secure & Private: Your diary entries are protected with top-notch security.\n- Search & Filter: Quickly find and revisit your past entries.\n- Multi-Language Support: Write in your preferred language with our diverse language options.\n\nEmbrace the art of journaling and keep your memories close. Download the app today and start your journey of self-expression!\n\n📥 Download Now: [App Store Link] | [Google Play Link]"
+  "dontHaveAccount?": "Dont Have an Account ?",
+  "submit": "Submit",
+  "confirm": "Confirm",
+  "enterYourEmail": "Enter Your Email",
+  "enterYourPassword": "Enter Your Password",
+  "enterYourUserName": "Enter Your UserName",
+  "youHaveAccount?": "You Have an Account ?",
+  "appInfo": "🌟 Introducing the Ultimate Diary App! 🌟\n\nUnlock the power of your thoughts and memories with our all-new diary app. Whether you want to jot down daily experiences, reflect on your dreams, or capture your creative ideas, our app is designed to make journaling easy and enjoyable.\n\n📖 Features:\n- Easy-to-Use Interface: Effortlessly write, edit, and organize your diary entries.\n- Customizable Themes: Choose from a variety of themes to match your mood.\n- Secure & Private: Your diary entries are protected with top-notch security.\n- Search & Filter: Quickly find and revisit your past entries.\n- Multi-Language Support: Write in your preferred language with our diverse language options.\n\nEmbrace the art of journaling and keep your memories close. Download the app today and start your journey of self-expression!\n\n📥 Download Now: [App Store Link] | [Google Play Link]",
+  "emptyEmailError": "Email Is Empty !",
+  "emptyPasswordError": "Empty Password Error",
+  "emptyUserName": "Empty UserName Error",
+  "error": "Error"
 }
