@@ -12,6 +12,7 @@ import HomeScreen from "./components/home/homeScreen";
 import AuthPage from "./pages/AuthPage";
 import LocalStorage from "./components/shared/localStorage";
 import Utils from "./utils/Utils";
+import InnerHomePage from "./pages/InnerHome";
 LocalStorage.initApp();
 const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/login", element: <AuthPage /> },
+  { path: "/home", element: <InnerHomePage /> },
 ]);
 i18n.use(initReactI18next).init({
   interpolation: { escapeValue: false },

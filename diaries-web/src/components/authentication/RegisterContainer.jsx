@@ -106,13 +106,13 @@ export default function LoginContainer() {
   }
   return (
     <div className="w-full sm:w-5/6 bg-zinc-800 h-full flex rounded-3xl justify-center items-center flex-col">
-      {AuthCtx.state.error && (
+      {
         <AuthErrorDialog
           errorMessage={AuthCtx.state.errorMessage}
           ref={errorDialogRef}
         />
-      )}
-      <PersonOutline sx={{ fontSize: 200, margin: 4, color: "#4B5563" }} />
+      }
+      <PersonOutline sx={{ fontSize: 150, margin: 4, color: "#4B5563" }} />
       <input
         ref={emailRef}
         type="text"
