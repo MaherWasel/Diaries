@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import AuthErrorDialog from "./AuthErrorDialog";
 import { SupaBase } from "../../api/SupaBaseClient";
 import MainLoadingIcon from "../shared/mainLoadinIcon";
+import LocalStorage from "../shared/localStorage";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginContainer() {
   const emailRef = useRef();
@@ -12,7 +14,7 @@ export default function LoginContainer() {
   const AuthCtx = useContext(AuthContext);
   const { t } = useTranslation();
   const errorDialogRef = useRef();
-
+  const navigate = useNavigate();
   let inputStyles =
     "rounded-3xl sm:w-1/2 p-6 text-xl m-4  outline-none bg-gray-600 duration-75 text-white w-full";
   async function handleSignIn() {
@@ -61,6 +63,9 @@ export default function LoginContainer() {
         errorMessage: null,
         loginPage: true,
       }));
+      LocalStorage.storeUserId(response.data.user.id);
+
+      navigate("/home");
       return;
     }
   }

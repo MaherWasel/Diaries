@@ -83,3 +83,14 @@ body {
 .black-text {
   font-weight: 900;
 }
+
+/* styles.css */
+input[type="date"] {
+  color: #9ca3af; /* Tailwind's gray-400 */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(66%) sepia(8%) saturate(0%) hue-rotate(193deg) brightness(92%)
+    contrast(90%);
+  opacity: 1; /* Ensure the icon is visible */
+}
