@@ -1,11 +1,12 @@
 import { PersonOutline } from "@mui/icons-material";
 import { useContext, useRef } from "react";
 import { AuthContext } from "./AuthContextProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { SupaBase } from "../../api/SupaBaseClient";
 import AuthErrorDialog from "./AuthErrorDialog";
 import MainLoadinIcon from ".././shared/mainLoadinIcon";
+import LocalStorage from "../shared/localStorage";
 
 export default function LoginContainer() {
   const emailRef = useRef();
@@ -13,6 +14,7 @@ export default function LoginContainer() {
   const passwordRef = useRef();
   const AuthCtx = useContext(AuthContext);
   const errorDialogRef = useRef();
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   let inputStyles =
@@ -98,6 +100,10 @@ export default function LoginContainer() {
         error: false,
         errorMessage: null,
       }));
+      LocalStorage.storeUserName(userName);
+      LocalStorage.storeUserId(response.data.user.id);
+
+      navigate("/home");
       return;
     }
   }

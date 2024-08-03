@@ -63,6 +63,13 @@ export default function LoginContainer() {
         errorMessage: null,
         loginPage: true,
       }));
+      const userResponse = await SupaBase.from("users")
+        .select()
+        .eq("id", response.data.user.id);
+
+      if (userResponse.data) {
+        LocalStorage.storeUserName(userResponse.data[0].userName);
+      }
       LocalStorage.storeUserId(response.data.user.id);
 
       navigate("/home");

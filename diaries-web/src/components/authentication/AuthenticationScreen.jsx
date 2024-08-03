@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "./AuthContextProvider";
 import LoginContainer from "./LoginContainer";
 import RegisterContainer from "./RegisterContainer";
 import AuthHeader from "./AuthHeader";
+import { useNavigate } from "react-router-dom";
+import Utils from "../../utils/Utils";
 
 export default function AuthenticationScreen() {
   const AuthCtx = useContext(AuthContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (Utils.userId !== "") {
+      navigate("/home");
+    }
+  }, []);
   return (
     <div className="w-full h-screen bg-gray-500 flex flex-col">
       <AuthHeader />

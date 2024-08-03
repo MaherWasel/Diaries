@@ -18,5 +18,15 @@
   "emptyEmailError": "Email Is Empty !",
   "emptyPasswordError": "Empty Password Error",
   "emptyUserName": "Empty UserName Error",
-  "error": "Error"
+  "error": "Error",
+  "createDate": "Create a Date",
+  "profile": "Profile",
+  "logout": "Logout",
+  "diaresDate": "Diaries Dates",
+
+  "selectData": "Select A Date to View Your Diaries",
+  "title": "Title",
+  "description": "Description",
+  "noDiariesFound": "No Diaries Found For This Data, Start Adding ones",
+  "selectDate": "Select A Date"
 }

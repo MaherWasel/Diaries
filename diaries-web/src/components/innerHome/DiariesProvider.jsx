@@ -25,13 +25,13 @@ export default function DiariesProvider({ children }) {
       errorMessage: null,
       success: false,
       data: null,
+      initialize: true,
     });
 
-    const response = await SupaBase.from("diares") // Fixed typo: "diares" to "diaries"
+    const response = await SupaBase.from("diares")
 
       .select()
       .eq("user_id", Utils.userId);
-    console.log(response.data);
 
     if (response.error) {
       setState({
@@ -41,7 +41,7 @@ export default function DiariesProvider({ children }) {
         success: false,
         data: null,
       });
-      return; // Added return statement to prevent further execution
+      return;
     }
 
     setState({

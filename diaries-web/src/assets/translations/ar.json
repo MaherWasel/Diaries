@@ -18,5 +18,14 @@
   "youHaveAccount?": "تمتلك حساب ؟",
   "emptyEmailError": "البريد الألكتوني غير مكتوب",
   "emptyPasswordError": "كلمة المرور غير مكتوبة",
-  "emptyUserName": "اسم الحساب غير مكتوب"
+  "emptyUserName": "اسم الحساب غير مكتوب",
+  "profile": "الحساب الشخصي",
+  "logout": "تسجيل الخروج",
+  "createDate": "انشاء تاريخ",
+  "diaresDate": "تاريخ اليوميات",
+  "selectData": "اختر تاريخ لرؤية مذكراتك",
+  "title": "العنوان",
+  "description": "الوصف",
+  "noDiariesFound": "لا توجد مذكرات في هذا التاريخ, ابدأ بأضافتهم",
+  "selectDate": "اختر تاريخ"
 }
