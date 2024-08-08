@@ -4,15 +4,22 @@ import 'package:diaries_mobile/theme/theme_provider.dart';
 import 'package:diaries_mobile/utils/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart' show ProviderScope;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import 'package:supabase_flutter/supabase_flutter.dart' show Supabase;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
 
   await LocalStorage.initApp();
-
+  await Supabase.initialize(
+    url: dotenv.get("supabaseUrl"),
+    anonKey: dotenv.get("supabaseAnonKey"),
+  );
   runApp(EasyLocalization(
       supportedLocales: const [
         Locale('en', 'US'),

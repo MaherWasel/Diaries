@@ -8,5 +8,8 @@
   "login": "تسجيل الدخول",
   "joinUs": "انضم الينا",
   "confirm": "تأكيد",
-  "createAccount": "انشاء حساب"
+  "createAccount": "انشاء حساب",
+  "invalidEmail": "صياغة البريد الألكتروني غير صحيحه",
+  "invalidPassword": "صياغة كلمة المرور غير صحيحه",
+  "invalidUserName": "صياغة اسم المستخدم غير صحيحه"
 }

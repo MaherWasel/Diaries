@@ -1,3 +1,4 @@
+import 'package:diaries_mobile/modules/authentication/data/auth_repo.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 abstract class AuthStates {}
@@ -19,7 +20,20 @@ class AuthFailure extends AuthStates {
 
 class AuthController extends StateNotifier<AuthStates> {
   AuthController() : super(AuthInitial());
+  final authRepo = AuthRepository();
+  Future<void> signIn({required String email, required String password}) async {
+    state = AuthLoading();
+    final response = await authRepo.signIn(email: email, password: password);
+    response.fold(
+        (left) => state = AuthFailure(errorMessage: left.errorMessage),
+        (right) => state = AuthSuccess());
+  }
 }
+
+final authControllerProvider =
+    StateNotifierProvider<AuthController, AuthStates>((ref) {
+  return AuthController();
+});
 
 class RegisterOrSignInController extends StateNotifier<bool> {
   RegisterOrSignInController() : super(false);

@@ -38,7 +38,7 @@ class AuthScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
-              Spacer(),
+              const Spacer(),
               LanguageIcon(),
               Image.asset(
                 IconsPath.appIconPath,
@@ -54,7 +54,8 @@ class AuthScreen extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: getLinearGradient(context: context),
         ),
-        child: LoginForm(),
+        child: const Center(
+            child: const SingleChildScrollView(child: LoginForm())),
       ),
     );
   }
