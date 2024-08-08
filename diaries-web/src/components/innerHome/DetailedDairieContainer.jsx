@@ -27,7 +27,11 @@ export default function DetailedDairieContainer() {
           );
         }
         if (DetailedDairieCtx.state.loading) {
-          return <LoadingIcon />;
+          return (
+            <p className="m-4 p-8">
+              <LoadingIcon />
+            </p>
+          );
         } else if (DetailedDairieCtx.state.error) {
           return <p>{DetailedDairieCtx.state.errorMessage}</p>;
         }

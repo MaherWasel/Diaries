@@ -2,10 +2,9 @@ import { useState, useContext } from "react";
 import { SupaBase } from "../../api/SupaBaseClient";
 import Utils from "../../utils/Utils";
 import { DiariesContext } from "./DiariesProvider";
-import LoadingIcon from "../shared/mainLoadinIcon";
+
 import { useTranslation } from "react-i18next";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import LoadingIcon from "../shared/mainLoadinIcon";
 
 export default function CreateDiarieForm() {
   const DiarieCtx = useContext(DiariesContext);
@@ -16,16 +15,17 @@ export default function CreateDiarieForm() {
     error: false,
     errorMessage: null,
   });
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedDate, setSelectedDate] = useState("");
 
   async function insertDiarie() {
     if (!selectedDate) return;
     setState((old) => ({ ...old, loading: true }));
     const response = await SupaBase.from("diares").insert({
       user_id: Utils.userId,
-      date: selectedDate.toISOString().split("T")[0],
+      date: selectedDate,
     });
     if (response.error) {
+      console.log(response.error);
       setState((old) => ({
         ...old,
         loading: false,
@@ -36,7 +36,7 @@ export default function CreateDiarieForm() {
     }
     setState((old) => ({
       loading: false,
-      success: false,
+      success: true,
       error: false,
       errorMessage: null,
     }));
@@ -45,18 +45,18 @@ export default function CreateDiarieForm() {
 
   return (
     <div className="w-full h-28 border-2 border-zinc-800 rounded-3xl mx-4 flex justify-start items-center text-gray-400">
-      <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        className="m-4 outline-none bg-zinc-800 p-4 rounded-2xl"
-        dateFormat="yyyy-MM-dd"
-        placeholderText={t("selectDate")}
-        style={{ zIndex: 10, width: "100%" }}
+      <input
+        type="date"
+        value={selectedDate}
+        onChange={(e) => setSelectedDate(e.target.value)}
+        className="m-4 sm:w-1/4 outline-none bg-zinc-800 p-4 rounded-2xl"
+        placeholder={t("selectDate")}
+        style={{ zIndex: 10 }}
       />
       <button
         onClick={insertDiarie}
         disabled={state.loading}
-        className="m-4 p-4 bg-zinc-800 rounded-2xl hover:bg-zinc-600 duration-75"
+        className="m-4 sm:w-1/4 p-4 bg-zinc-800 rounded-2xl hover:bg-zinc-600 duration-75"
       >
         {state.loading ? <LoadingIcon /> : t("confirm")}
       </button>
