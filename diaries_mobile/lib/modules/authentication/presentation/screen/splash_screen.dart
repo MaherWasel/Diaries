@@ -24,8 +24,10 @@ class SplashScreen extends StatelessWidget {
               height: 200.h,
             )
                 .animate(onComplete: (_) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AuthScreen()));
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => AuthScreen()),
+                  );
                 })
                 .fadeIn(duration: 0.5.seconds)
                 .scaleXY(begin: 1, end: 1.2, duration: 0.5.seconds)

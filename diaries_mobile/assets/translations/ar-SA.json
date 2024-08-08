@@ -1,1 +1,12 @@
-{}
+{
+  "email": "البريد الألكتروني",
+  "userName": "أسم المستخدم",
+  "password": "كلمة المرور",
+  "dontHaveAccount?": "لا تمتلك حساب ؟",
+  "haveAnAccount?": "تمتلك حساب ؟",
+  "register": "تسجيل",
+  "login": "تسجيل الدخول",
+  "joinUs": "انضم الينا",
+  "confirm": "تأكيد",
+  "createAccount": "انشاء حساب"
+}

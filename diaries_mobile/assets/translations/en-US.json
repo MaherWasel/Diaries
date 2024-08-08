@@ -1,1 +1,12 @@
-{}
+{
+  "email": "Email",
+  "userName": "UserName",
+  "password": "Password",
+  "dontHaveAccount?": "Dont Have an Account ?",
+  "haveAnAccount?": "Have an Account ?",
+  "register": "Register",
+  "login": "Login",
+  "joinUs": "Join Us",
+  "confirm": "Confirm",
+  "createAccount": "Create Account"
+}

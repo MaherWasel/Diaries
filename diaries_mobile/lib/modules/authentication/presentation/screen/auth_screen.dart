@@ -1,3 +1,6 @@
+import 'package:diaries_mobile/modules/authentication/presentation/widget/language_icon.dart';
+import 'package:diaries_mobile/modules/authentication/presentation/widget/login_form.dart';
+import 'package:diaries_mobile/shared/constants.dart';
 import 'package:diaries_mobile/shared/icons_path.dart';
 import 'package:diaries_mobile/shared/local_storage.dart';
 import 'package:diaries_mobile/shared/main_text.dart';
@@ -16,39 +19,27 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Theme.of(context).colorScheme.primary,
+                Theme.of(context).colorScheme.primary.withOpacity(0.8),
+                Theme.of(context).colorScheme.primary.withOpacity(0.85),
+                Theme.of(context).colorScheme.primary.withOpacity(0.9),
+                Theme.of(context).colorScheme.primary.withOpacity(0.95),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
             children: [
               Spacer(),
-              IconButton(
-                onPressed: () async {
-                  if (Utils.appOnAr) {
-                    await LocalStorage.storeAppLanguage(
-                        appLanguage: !Utils.appOnAr);
-                    // ignore: use_build_context_synchronously
-                    await context.setLocale(const Locale(
-                        'en', "US")); // change `easy_localization` locale
-                    await Get.updateLocale(const Locale('en', "US"));
-                  } else {
-                    await LocalStorage.storeAppLanguage(
-                        appLanguage: !Utils.appOnAr);
-                    // ignore: use_build_context_synchronously
-                    await context.setLocale(const Locale("ar", "SA"));
-                    await Get.updateLocale(const Locale("ar", "SA"));
-                  }
-                },
-                icon: Container(
-                  padding: EdgeInsets.all(16.r),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(
-                          width: 1.5,
-                          color: Theme.of(context).colorScheme.primary)),
-                  child: MainText(Utils.appOnAr ? "EN" : "ع"),
-                ),
-              ),
+              LanguageIcon(),
               Image.asset(
                 IconsPath.appIconPath,
                 width: 50.w,
@@ -57,6 +48,13 @@ class AuthScreen extends StatelessWidget {
             ],
           ).animate().fadeIn(),
         ),
+      ),
+      body: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: getLinearGradient(context: context),
+        ),
+        child: LoginForm(),
       ),
     );
   }
