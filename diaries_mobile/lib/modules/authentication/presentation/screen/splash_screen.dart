@@ -1,5 +1,7 @@
 import 'package:diaries_mobile/modules/authentication/presentation/screen/auth_screen.dart';
+import 'package:diaries_mobile/modules/home/presentation/screen/home_screen.dart';
 import 'package:diaries_mobile/shared/main_text.dart';
+import 'package:diaries_mobile/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,14 +26,22 @@ class SplashScreen extends StatelessWidget {
               height: 200.h,
             )
                 .animate(onComplete: (_) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => AuthScreen()),
-                  );
+                  if (Utils.userId != "") {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                    );
+                  } else {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AuthScreen()),
+                    );
+                  }
                 })
                 .fadeIn(duration: 0.5.seconds)
                 .scaleXY(begin: 1, end: 1.2, duration: 0.5.seconds)
-                .then(delay: Duration(seconds: 1))
+                .then(delay: const Duration(seconds: 1))
                 .blurXY(),
             Padding(
                 padding: const EdgeInsets.all(32.0),
@@ -44,7 +54,7 @@ class SplashScreen extends StatelessWidget {
                     .animate()
                     .fadeIn()
                     .scaleXY(begin: 1, end: 1.2)
-                    .then(delay: Duration(seconds: 1))
+                    .then(delay: const Duration(seconds: 1))
                     .fadeOut())
           ],
         )),

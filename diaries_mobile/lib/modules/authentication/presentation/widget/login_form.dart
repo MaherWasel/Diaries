@@ -51,7 +51,7 @@ class _LoginFormState extends ConsumerState<LoginForm>
       if (ref.read(authControllerProvider) is AuthFailure) {
         showDialog(context: context, builder: (context) => const ErrorDialog());
       } else if (ref.read(authControllerProvider) is AuthSuccess) {
-        Navigator.push(
+        Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
       }
     });

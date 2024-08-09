@@ -47,7 +47,7 @@ class AuthController extends StateNotifier<AuthStates> {
 }
 
 final authControllerProvider =
-    StateNotifierProvider<AuthController, AuthStates>((ref) {
+    StateNotifierProvider.autoDispose<AuthController, AuthStates>((ref) {
   return AuthController();
 });
 
@@ -59,6 +59,6 @@ class RegisterOrSignInController extends StateNotifier<bool> {
 }
 
 final registerOrSignInControllerProvider =
-    StateNotifierProvider<RegisterOrSignInController, bool>((ref) {
+    StateNotifierProvider.autoDispose<RegisterOrSignInController, bool>((ref) {
   return RegisterOrSignInController();
 });

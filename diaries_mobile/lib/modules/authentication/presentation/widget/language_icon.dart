@@ -1,17 +1,20 @@
+import 'package:diaries_mobile/modules/authentication/presentation/provider/auth_controller.dart';
 import 'package:diaries_mobile/shared/local_storage.dart';
 import 'package:diaries_mobile/shared/main_text.dart';
 import 'package:diaries_mobile/utils/utils.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class LanguageIcon extends StatelessWidget {
+class LanguageIcon extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return IconButton(
       onPressed: () async {
+        ref.read(authControllerProvider.notifier).reset();
         if (Utils.appOnAr) {
           await LocalStorage.storeAppLanguage(appLanguage: !Utils.appOnAr);
           // ignore: use_build_context_synchronously
