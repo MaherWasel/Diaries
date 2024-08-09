@@ -1,3 +1,4 @@
+import 'package:diaries_mobile/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,11 +11,11 @@ class PersonLogo extends StatelessWidget {
       decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-              color: Theme.of(context).colorScheme.primary, width: 2)),
+              color: Utils.appOnLight ? Colors.black : Colors.white, width: 2)),
       child: Icon(
         Icons.person,
         size: 150.sp,
-        color: Theme.of(context).colorScheme.primary,
+        color: Utils.appOnLight ? Colors.black : Colors.white,
       ),
     );
   }

@@ -11,5 +11,8 @@
   "createAccount": "انشاء حساب",
   "invalidEmail": "صياغة البريد الألكتروني غير صحيحه",
   "invalidPassword": "صياغة كلمة المرور غير صحيحه",
-  "invalidUserName": "صياغة اسم المستخدم غير صحيحه"
+  "invalidUserName": "صياغة اسم المستخدم غير صحيحه",
+  "close": "اغلاق",
+  "error": "حدث خطأ",
+  "unknownError": "حدث خطا غير متوقع"
 }

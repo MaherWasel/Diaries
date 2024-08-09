@@ -9,7 +9,10 @@
   "joinUs": "Join Us",
   "confirm": "Confirm",
   "createAccount": "Create Account",
-  "invalidEmail": "Invalid Email",
-  "invalidPassword": "Invalid Password",
-  "invalidUserName": "Invalid UserName"
+  "invalidEmail": "Invalid Email Format",
+  "invalidPassword": "Invalid Password Format",
+  "invalidUserName": "Invalid UserName Format",
+  "close": "Close",
+  "error": "Error",
+  "unknownError": "Unknown Error Occured"
 }

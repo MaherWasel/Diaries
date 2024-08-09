@@ -28,6 +28,22 @@ class AuthController extends StateNotifier<AuthStates> {
         (left) => state = AuthFailure(errorMessage: left.errorMessage),
         (right) => state = AuthSuccess());
   }
+
+  Future<void> register(
+      {required String email,
+      required String userName,
+      required String password}) async {
+    state = AuthLoading();
+    final response = await authRepo.register(
+        email: email, userName: userName, password: password);
+    response.fold(
+        (left) => state = AuthFailure(errorMessage: left.errorMessage),
+        (right) => state = AuthSuccess());
+  }
+
+  void reset() {
+    state = AuthInitial();
+  }
 }
 
 final authControllerProvider =
