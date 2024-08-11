@@ -2,6 +2,7 @@ import 'package:diaries_mobile/modules/authentication/presentation/provider/auth
 import 'package:diaries_mobile/modules/authentication/presentation/widget/error_dialog.dart';
 import 'package:diaries_mobile/modules/authentication/presentation/widget/person_logo.dart';
 import 'package:diaries_mobile/modules/home/presentation/screen/home_screen.dart';
+import 'package:diaries_mobile/modules/navigator/presentation/screen/navigating_screen.dart';
 import 'package:diaries_mobile/shared/main_button.dart';
 import 'package:diaries_mobile/shared/main_text.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -51,8 +52,8 @@ class _LoginFormState extends ConsumerState<LoginForm>
       if (ref.read(authControllerProvider) is AuthFailure) {
         showDialog(context: context, builder: (context) => const ErrorDialog());
       } else if (ref.read(authControllerProvider) is AuthSuccess) {
-        Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => NavigatingScreen()));
       }
     });
     return Form(

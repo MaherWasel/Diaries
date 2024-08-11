@@ -1,7 +1,9 @@
 import 'package:diaries_mobile/modules/authentication/presentation/screen/auth_screen.dart';
 import 'package:diaries_mobile/modules/home/presentation/screen/home_screen.dart';
+import 'package:diaries_mobile/modules/navigator/presentation/screen/navigating_screen.dart';
 import 'package:diaries_mobile/shared/main_text.dart';
 import 'package:diaries_mobile/utils/utils.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +31,8 @@ class SplashScreen extends StatelessWidget {
                   if (Utils.userId != "") {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => NavigatingScreen()),
                     );
                   } else {
                     Navigator.pushReplacement(
@@ -46,7 +49,7 @@ class SplashScreen extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.all(32.0),
                 child: MainText(
-                  "Diaries",
+                  "diaries".tr(),
                   fontsize: 32.sp,
                   weight: FontWeight.bold,
                   color: Theme.of(context).colorScheme.primary,

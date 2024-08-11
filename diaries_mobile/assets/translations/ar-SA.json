@@ -14,5 +14,17 @@
   "invalidUserName": "صياغة اسم المستخدم غير صحيحه",
   "close": "اغلاق",
   "error": "حدث خطأ",
-  "unknownError": "حدث خطا غير متوقع"
+  "unknownError": "حدث خطا غير متوقع",
+  "resetPassword": "اعادة تعيين كلمة المرور",
+  "home": "الصفحة الرئيسية",
+  "settings": "الأعدادات",
+  "appSettings": "اعدادات التطبيق",
+  "selectLanguage": "اختر اللغة",
+  "english": "الأنجليزية",
+  "arabic": "العربية",
+  "appTheme": "نمط التطبيق",
+  "dark": "داكن",
+  "light": "فاتح",
+  "authSettings": "اعدادات المصداقية",
+  "diaries": "مذكرات"
 }

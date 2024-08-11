@@ -14,5 +14,17 @@
   "invalidUserName": "Invalid UserName Format",
   "close": "Close",
   "error": "Error",
-  "unknownError": "Unknown Error Occured"
+  "unknownError": "Unknown Error Occured",
+  "resetPassword": "Reset Password",
+  "home": "Home",
+  "settings": "Settings",
+  "appSettings": "App Settings",
+  "selectLanguage": "Select Language",
+  "english": "English",
+  "arabic": "Arabic",
+  "appTheme": "App Theme",
+  "dark": "Dark",
+  "light": "Light",
+  "authSettings": "Auth Settings",
+  "diaries": "Diaries"
 }
