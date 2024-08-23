@@ -28,5 +28,7 @@
   "authSettings": "اعدادات المصداقية",
   "diaries": "مذكرات",
   "addDate": "اضف التاريخ",
-  "selectDate": "اختر تاريخ"
+  "selectDate": "اختر تاريخ",
+  "profile": "الحساب الشخصي",
+  "logut": "تسجيل الخروج"
 }

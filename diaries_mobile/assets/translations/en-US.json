@@ -28,5 +28,7 @@
   "authSettings": "Auth Settings",
   "diaries": "Diaries",
   "addDate": "Add Date",
-  "selectDate": "Select Date"
+  "selectDate": "Select Date",
+  "profile": "Profile",
+  "logout": "Logout"
 }

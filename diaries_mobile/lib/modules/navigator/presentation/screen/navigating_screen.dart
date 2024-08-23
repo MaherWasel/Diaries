@@ -1,5 +1,5 @@
 import 'package:diaries_mobile/modules/home/presentation/screen/home_screen.dart';
-import 'package:diaries_mobile/modules/navigator/presentation/widget/home_header.dart';
+import 'package:diaries_mobile/modules/navigator/presentation/widget/navigator_header.dart';
 import 'package:diaries_mobile/modules/navigator/presentation/provider/navigator_controller.dart';
 import 'package:diaries_mobile/modules/navigator/presentation/widget/navigate_buttom_bar.dart';
 import 'package:diaries_mobile/modules/settings/presentation/screen/settings_screen.dart';
