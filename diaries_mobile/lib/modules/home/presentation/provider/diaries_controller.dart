@@ -28,3 +28,8 @@ class DiariesState extends StateNotifier<HomeStates> {
         (right) => state = HomeSuccess<List<Diaries>>(data: right.data));
   }
 }
+
+final diariesStateControllerProvider =
+    StateNotifierProvider<DiariesState, HomeStates>((ref) {
+  return DiariesState();
+});

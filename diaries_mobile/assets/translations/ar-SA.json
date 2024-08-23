@@ -26,5 +26,7 @@
   "dark": "داكن",
   "light": "فاتح",
   "authSettings": "اعدادات المصداقية",
-  "diaries": "مذكرات"
+  "diaries": "مذكرات",
+  "addDate": "اضف التاريخ",
+  "selectDate": "اختر تاريخ"
 }

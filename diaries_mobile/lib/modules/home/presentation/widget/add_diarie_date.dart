@@ -56,7 +56,7 @@ class AddDiarieDate extends ConsumerWidget {
                         MainText(
                           selectedDate != null
                               ? "${selectedDate.toLocal().toShortDateString()}"
-                              : "Select Date",
+                              : "selectDate".tr(),
                           fontsize: 18.sp,
                         ),
                       ],
@@ -74,7 +74,10 @@ class AddDiarieDate extends ConsumerWidget {
           SizedBox(
             height: 50.h,
             child: MainButton(
-              child: MainText("confirm".tr()),
+              child: MainText(
+                "addDate".tr(),
+                fontsize: 18.sp,
+              ),
               onPressed: () {
                 // Handle confirm action
               },
