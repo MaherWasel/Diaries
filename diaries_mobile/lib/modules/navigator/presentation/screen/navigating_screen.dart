@@ -1,5 +1,5 @@
 import 'package:diaries_mobile/modules/home/presentation/screen/home_screen.dart';
-import 'package:diaries_mobile/modules/home/presentation/widget/home_header.dart';
+import 'package:diaries_mobile/modules/navigator/presentation/widget/home_header.dart';
 import 'package:diaries_mobile/modules/navigator/presentation/provider/navigator_controller.dart';
 import 'package:diaries_mobile/modules/navigator/presentation/widget/navigate_buttom_bar.dart';
 import 'package:diaries_mobile/modules/settings/presentation/screen/settings_screen.dart';
@@ -18,7 +18,7 @@ class NavigatingScreen extends ConsumerWidget {
         flexibleSpace: Container(
             height: 400,
             padding: const EdgeInsets.only(top: 32, right: 8, left: 8),
-            child: const Center(child: HomeHeader())),
+            child: const Center(child: NavigatorHeader())),
       ),
       body: Container(
         width: double.infinity,
